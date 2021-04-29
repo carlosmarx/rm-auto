@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+  <%= favicon_link_tag 'theme/favicon-32x32.png', rel: 'icon', type: 'image/png' %>
+	<!--plugins-->
+	<%= stylesheet_link_tag 'plugins', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<title>Gama System – A complete SGI and CRM</title>
+</head>
+
+<body>
+  <!--wrapper-->
+  <div class="wrapper">
+    <%= render partial: 'layouts/shared/navbar' %>
+    <%= render partial: 'layouts/shared/header' %>
+
+    <!--start page wrapper -->
+    <div class="page-wrapper">
+      <div class="page-content">
+        <%= yield %>
+      </div>
+    </div>
+    <!--end page wrapper -->
+  </div>
+  <!--end wrapper-->
+  
+  <!--start overlay-->
+  <div class="overlay toggle-icon"></div>
+  <!--end overlay-->
+  <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+  <!--End Back To Top Button-->
+  <%= render partial: 'layouts/shared/footer' %>
+  
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+/*
+ * This is import default styles theme
+ *
+ *= require ./app
+ *= require ./icons
+ *= require ./dark-theme
+ *= require ./semi-dark
+ *= require ./header-colors
+ */

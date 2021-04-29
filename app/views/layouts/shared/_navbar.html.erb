@@ -1,0 +1,72 @@
+<!--sidebar wrapper -->
+<div class="sidebar-wrapper overflow-auto" data-simplebar="true">
+  <div class="sidebar-header">
+    <div>
+      <%= image_tag "theme/logo-icon.png", class:'logo-icon', alt:"logo icon" %>
+    </div>
+    <div>
+      <h4 class="logo-text">Gamadmin</h4>
+    </div>
+    <div class="toggle-icon ms-auto"><i class='bx bx-first-page'></i>
+    </div>
+  </div>
+  <!--navigation-->
+  <ul class="metismenu" id="menu">
+    <li>
+      <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-home'></i>
+        </div>
+        <div class="menu-title">Dashboard</div>
+      </a>
+      <ul>
+        <li> 
+          <%= link_to root_path do %>
+            <i class="bx bx-right-arrow-alt"></i>Home
+          <% end %>
+        </li>
+        <li> 
+          <%= link_to chat_path do %>
+            <i class="bx bx-right-arrow-alt"></i>Chat
+          <% end %>
+        </li><li> 
+          <%= link_to blank_path do %>
+            <i class="bx bx-right-arrow-alt"></i>Blank Page
+          <% end %>
+        </li><li> 
+          <%= link_to home_path do %>
+            <i class="bx bx-right-arrow-alt"></i>Home?
+          <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-label">Menu Exemplos</li>
+    <li>
+      <a href="#">
+        <div class="parent-icon"><i class='bx bx-briefcase-alt-2'></i>
+        </div>
+        <div class="menu-title">Widgets</div>
+      </a>
+    </li>
+    <li>
+      <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-cart-alt' ></i>
+        </div>
+        <div class="menu-title">eCommerce</div>
+      </a>
+      <ul>
+        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Products</a>
+        </li>
+        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
+        </li>
+        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
+        </li>
+        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Orders</a>
+        </li>
+      </ul>
+    </li>
+    
+  </ul>
+  <!--end navigation-->
+</div>
+<!--end sidebar wrapper -->
