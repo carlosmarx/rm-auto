@@ -103,7 +103,7 @@ gem 'redis-rails'
 gem 'cancancan', '3.0.1'
 
 # https://github.com/heartcombo/devise
-gem 'devise', '4.7.1'
+gem 'devise'
 
 ## BACKGROUND JOBS
 # https://github.com/mperham/sidekiq

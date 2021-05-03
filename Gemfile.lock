@@ -470,7 +470,7 @@ DEPENDENCIES
   cocoon (= 1.2.14)
   correios_api!
   cpf_cnpj
-  devise (= 4.7.1)
+  devise
   dotenv-rails
   enum_help
   faker
