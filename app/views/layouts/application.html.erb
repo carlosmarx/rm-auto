@@ -1,16 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>GamaSystem</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--favicon-->
+    <%= favicon_link_tag 'theme/favicon-32x32.png', rel: 'icon', type: 'image/png' %>
+    <!--plugins-->
+    <%= stylesheet_link_tag 'plugins', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>RM Auto – SGI para loja de autos</title>
   </head>
-
   <body>
-    <%= yield %>
+    <!--wrapper-->
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+    <!--end wrapper-->
+    
+    <!--start overlay-->
+    <div class="overlay toggle-icon"></div>
+    <!--end overlay-->
+    <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+    <!--End Back To Top Button-->
+    
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </body>
+
 </html>
