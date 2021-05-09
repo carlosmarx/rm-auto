@@ -16,7 +16,7 @@
   <div class="card-body">
     <h6 class="card-title">Listagem de Grupos</h6>
     <hr>
-    <table class="table mb-0 table-hover">
+    <table class="table mb-3 table-hover table-responsive">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -41,11 +41,10 @@
       </tbody>
     </table>
 
-    <br>  
-        <%= link_to new_group_path, class:"btn btn-primary" do %>
-          <i class="bx bx-plus mr-1"></i>
-          Novo Grupo
-        <% end %>
+    <%= link_to new_group_path, class:"btn btn-primary" do %>
+      <i class="bx bx-plus mr-1"></i>
+      Novo Grupo
+    <% end %>
   </div>
 </div>
 
