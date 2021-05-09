@@ -16,20 +16,24 @@
   <div class="card-body">
     <h6 class="card-title">Exibindo Grupo</h6>
     <hr>
-    <table class="table ">
-      <tr>
-        <th>Nome</th>
-        <td><%= @group.name %></td>
-      </tr>
-       <tr>
-        <th>Status</th>
-        <td><%= @group.status %></td>
-      </tr>
-    </table>
+    <div class="block block-rounded block-themed">
+      <div class="block-content">
+        <dl class="dl-horizontal">
+          <dt><strong>Nome:</strong></dt>
+          <dd><%= @group.name %></dd>
+          <dt><strong>Status:</strong></dt>
+          <dd><%= @group.status_i18n %></dd>
+          
+        </dl>
+      </div>
+    </div>
 
     <%= link_to 'Editar', edit_group_path(@group), class:"btn btn-primary" %>
     <%= link_to 'Voltar', groups_path, class:"btn btn-danger" %>
   </div>
 </div>
+
+
+
 
 

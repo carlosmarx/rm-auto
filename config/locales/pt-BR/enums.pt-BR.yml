@@ -1,0 +1,71 @@
+pt-BR:
+  enums:
+    default_status: &default_status
+      status:
+        enabled: Publicado
+        disabled: Não Publicado
+
+    default_alt_status: &default_alt_status
+      status:
+        enabled: Habilitado
+        disabled: Desabilitado
+
+    client:
+      kind:
+        individual: Pessoa Física
+        corporate: Pessoa Jurídica
+
+    cancelation_reason:
+      <<: *default_status
+
+    group:
+      status:
+        waiting: Aguardando
+        enabled: Ativo
+        disabled: Inativo
+
+    optional:
+      <<: *default_status
+      kind:
+        car: Carro
+        motorcycle: Moto
+
+    lead:
+      heat_level:
+        cold: Frio
+        warm: Morno
+        hot: Quente
+        very_hot: Super quente
+      kind:
+        direct_selling: Venda Direta
+        retail: Varejo
+
+    evaluation:
+      destination:
+        stock: Estoque Varejo
+        day: Leilão do Dia
+        hour: Leilão da Hora
+
+    attendance:
+      heat_level:
+        cold: Frio
+        warm: Morno
+        hot: Quente
+        very_hot: Super quente
+      kind:
+        direct_selling: Venda Direta
+        retail: Varejo
+      kind_ds:
+        rural_producer: Produtor Rural
+        pcd: PDC
+        legal_entity: Pessoa Jurídica
+        taxi_driver: Taxista
+        rental_company: Locadora
+        public_agency: Órgão Público
+        employee: Funcionário
+
+    user:
+      kind:
+        guest: Visitante
+        seller: Vendedor
+        admin: Admin

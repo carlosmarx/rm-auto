@@ -1,0 +1,95 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      group:
+        one: Grupo
+        other: Grupo
+      address: Endereco
+      analyze: Análises de Vendas
+      attendance: Atendimento
+      campaign: Campanha
+      cancelation_reason: Motivos de Cancelamento
+      client: Cliente
+      color: Cor
+      company: Grupo
+      contact: Contato
+      criterion: Critério
+      dealer: Revenda
+      evaluation: Avaliação
+      import: Importação
+      importation: Importação
+      inventory: Estoque
+      kind: Tipo
+      lead: Lead
+      lead_origin: Origens de Leads
+      lead_status: Status de Leads
+      make: Marca
+      model: Modelo
+      move: Movimentação
+      optional: Opcional
+      origin: Origem
+      seller: Vendedor
+      target: Lead
+      team: Equipe
+      trim: Versão
+      vehicle: Veículo
+      evaluation_setting: Configuração das avaliações
+      params: Parametros
+      base_profit_score_param: Parametros Base de Lucro Esperado
+      make_param: Parametros de Marca
+      year_param: Parametros de Ano Modelo
+      mileage_param: Parametros de Quilometragem
+      conservation_param: Parametros de Estado de Conservação
+      expected_profit_param: Parametros de Lucro Esperado
+
+    attributes:
+      default_attributes: &default_attributes
+        content: Conteúdo
+        description: Descrição
+        email: E-mail
+        name: Nome
+        note: Observações
+        status: Status
+        text: Conteúdo
+        title: Título
+        user: Usuário
+        created_at: Cadastrado em
+        updated_at: Atualizado em
+
+      params_attributes: &params_attributes
+        make_id: Marca
+        evaluation_setting_id: Configuração da Avaliação
+        type: Tipo
+        description: Descrição
+        initial_value: Range Inicial
+        final_value: Range Final
+        percent: Porcentagem
+        score: Pontuação
+        score_base: Pontuação Base
+        evaluation_base: Base para Avaliação
+        evaluation_operator_base: Base para Avaliação do Operador
+        evaluation_hangs_base: Base para Avaliação Trava
+
+      address:
+        <<: *default_attributes
+        street: Logradouro
+        number: Número
+        zip_code: CEP
+        neighborhood: Bairro
+        complement: Complemento
+        state_id: Estado
+        city_id: Cidade
+      user_profile:
+        <<: *default_attributes
+        id: Código
+        address: Endereço
+        gender: Sexo
+        birthdate: Data de Nascimento
+        avatar: Foto de perfil
+      group:
+        id: Código
+        name: Nome
+        status: Status

@@ -16,7 +16,7 @@
   <div class="card-body">
     <h6 class="card-title">Listagem de Grupos</h6>
     <hr>
-    <table class="table mb-3 table-hover table-responsive">
+    <table class="table mb-3 table-hover table-responsive card-table">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -30,7 +30,7 @@
           <tr>
             <th scope="row"><%= group.id %></th>
             <td><%= group.name %></td>
-            <td><%= group.status %></td>
+            <td><%= group.status_i18n %></td>
             <td>
               <%= link_to 'Exibir', group, class:"btn btn-success" %>
               <%= link_to 'Editar', edit_group_path(group), class:"btn btn-primary" %>
@@ -42,7 +42,6 @@
     </table>
 
     <%= link_to new_group_path, class:"btn btn-primary" do %>
-      <i class="bx bx-plus mr-1"></i>
       Novo Grupo
     <% end %>
   </div>
