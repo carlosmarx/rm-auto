@@ -1,0 +1,54 @@
+<% if notice %>
+  <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+    <div class="d-flex align-items-center">
+      <div class="font-35 text-success"><i class="bx bxs-check-circle"></i>
+      </div>
+      <div class="ms-3">
+        <h6 class="mb-0 text-success">Sucesso!</h6>
+        <div><%= notice %></div>
+      </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h6 class="card-title">Listagem de Grupos</h6>
+    <hr>
+    <table class="table mb-0 table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Status</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @groups.each do |group| %>
+          <tr>
+            <th scope="row"><%= group.id %></th>
+            <td><%= group.name %></td>
+            <td><%= group.status %></td>
+            <td>
+              <%= link_to 'Exibir', group, class:"btn btn-success" %>
+              <%= link_to 'Editar', edit_group_path(group), class:"btn btn-primary" %>
+              <%= link_to 'Apagar', group, class:"btn btn-danger", method: :delete, data: { confirm: 'Tem certeza que quer apagar esse grupo?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>  
+        <%= link_to new_group_path, class:"btn btn-primary" do %>
+          <i class="bx bx-plus mr-1"></i>
+          Novo Grupo
+        <% end %>
+  </div>
+</div>
+
+
+
+

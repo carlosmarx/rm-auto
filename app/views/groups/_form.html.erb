@@ -1,0 +1,33 @@
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class:"form-label" %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :status, class:"form-label" %>
+    <%
+=begin%>
+ <%= form.number_field :status, class:"form-control" %> 
+<%
+=end%>
+<%= form.select :status, [['AGUARDANDO', 0], ['ATIVO', 1], ['INATIVO', 2]], {}, {class:"form-select"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-success" %>
+    <%= link_to 'Voltar', groups_path, class:"btn btn-danger" %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      group:
+        one: Grupo
+        other: Grupo
+      subject:
+        one: Assunto
+        other: Assuntos
+    attributes:
+      created_at: Cadatrado em
+      updated_at: Atualizado em
+      user:
+        id: Código
+        email: Email
+        password: Senha
+        password_confirmation: Confirmação de Senha
+      user_profile:
+        id: Código
+        address: Endereço
+        gender: Sexo
+        birthdate: Data de Nascimento
+        avatar: Foto de perfil
+      group:
+        id: Código
+        name: Nome
+        status: Status
+      # will translate User attribute "login" as "Handle"

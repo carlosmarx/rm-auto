@@ -14,7 +14,7 @@
   <ul class="metismenu" id="menu">
     <li>
       <a href="javascript:;" class="has-arrow">
-        <div class="parent-icon"><i class='bx bx-home'></i>
+        <div class="parent-icon"><i class='bx bx-tachometer'></i>
         </div>
         <div class="menu-title">Dashboard</div>
       </a>
@@ -40,17 +40,9 @@
       </ul>
     </li>
 
-    <li class="menu-label">Menu Exemplos</li>
-    <li>
-      <a href="#">
-        <div class="parent-icon"><i class='bx bx-briefcase-alt-2'></i>
-        </div>
-        <div class="menu-title">Widgets</div>
-      </a>
-    </li>
     <li>
       <a href="javascript:;" class="has-arrow">
-        <div class="parent-icon"><i class='bx bx-cart-alt' ></i>
+        <div class="parent-icon"><i class='bx bx-wrench' ></i>
         </div>
         <div class="menu-title">eCommerce</div>
       </a>
@@ -62,6 +54,39 @@
         <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
         </li>
         <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Orders</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-label">Configurações</li>
+    <%
+=begin%>
+ <li>
+      <a href="#">
+        <div class="parent-icon"><i class='bx bx-briefcase-alt-2'></i>
+        </div>
+        <div class="menu-title">Gerenciar Grupos</div>
+      </a>
+    </li> 
+<%
+=end%>
+    <li>
+      <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-buildings' ></i>
+        </div>
+        <div class="menu-title">Gerenciar Grupos</div>
+      </a>
+      <ul>
+        <li>
+          <%= link_to groups_path do %>
+            <i class="bx bx-right-arrow-alt"></i>
+            Listar Grupos
+          <% end %>
+        </li>
+        <li>
+        <%= link_to new_group_path do %>
+          <i class="bx bx-plus"></i>Cadastrar Grupo
+        <% end %>
         </li>
       </ul>
     </li>
