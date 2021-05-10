@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  resources :groups, path: 'grupos'
+  resources :groups, path: 'grupos', path_names: { new: :cadastrar, edit: :editar } do
+    member do
+      get :log
+    end
+  end
+  
+  resources :dealers, path: 'lojas', path_names: { new: :cadastrar, edit: :editar } do
+    member do
+      get :log
+    end
+  end
+
   devise_for :users
   root to: 'pages#dashboard'
 

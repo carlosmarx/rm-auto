@@ -16,10 +16,10 @@
   <div class="card-header border-bottom-0 bg-transparent">
     <div class="d-flex align-items-center">
       <div>
-        <h5 class="font-weight-bold mb-0">Listagem de Grupos</h5>
+        <h5 class="font-weight-bold mb-0">Listagem de Lojas</h5>
       </div>
       <div class="ms-auto">
-      <%= link_to "Cadastrar Novo", new_group_path, class:"btn btn-primary radius-10" %>
+      <%= link_to "Cadastrar Novo", new_dealer_path, class:"btn btn-primary radius-10" %>
       </div>
     </div>
   </div>
@@ -31,19 +31,21 @@
             <th>#</th>
             <th>Nome</th>
             <th>Status</th>
+            <th>Grupo</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          <% @groups.each do |group| %>
+          <% @dealers.each do |dealer| %>
             <tr>
-              <td><%= group.id %></td>
-              <td><%= group.name %></td>
-              <td><%= group.status_i18n %></td>
+              <td><%= dealer.id %></td>
+              <td><%= dealer.name %></td>
+              <td><%= dealer.status_i18n %></td>
+              <td><%= dealer.group.name %></td>
               <td>
-                <%= link_to 'Exibir', group, class:"btn btn-success" %>
-                <%= link_to 'Editar', edit_group_path(group), class:"btn btn-primary" %>
-                <%= link_to 'Apagar', group, class:"btn btn-danger", method: :delete, data: { confirm: 'Tem certeza que quer apagar esse grupo?' } %>
+                <%= link_to 'Exibir', dealer, class:"btn btn-success" %>
+                <%= link_to 'Editar', edit_dealer_path(dealer), class:"btn btn-primary" %>
+                <%= link_to 'Apagar', dealer, class:"btn btn-danger", method: :delete, data: { confirm: 'Tem certeza que quer apagar essa loja?' } %>
               </td>
             </tr>
           <% end %>

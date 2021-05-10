@@ -23,6 +23,11 @@ pt-BR:
         waiting: Aguardando
         enabled: Ativo
         disabled: Inativo
+    dealer:
+      status:
+        waiting: Aguardando
+        enabled: Ativo
+        disabled: Inativo
 
     optional:
       <<: *default_status

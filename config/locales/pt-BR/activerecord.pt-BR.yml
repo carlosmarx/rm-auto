@@ -7,6 +7,9 @@ pt-BR:
       group:
         one: Grupo
         other: Grupo
+      dealer:
+        one: Revenda
+        other: Revendas
       address: Endereco
       analyze: Análises de Vendas
       attendance: Atendimento
@@ -93,3 +96,8 @@ pt-BR:
         id: Código
         name: Nome
         status: Status
+      dealer:
+        id: Código
+        name: Nome
+        status: Status
+        group: Grupo

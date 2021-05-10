@@ -2,10 +2,14 @@
 <div class="sidebar-wrapper overflow-auto" data-simplebar="true">
   <div class="sidebar-header">
     <div>
-      <%= image_tag "theme/logo-icon.png", class:'logo-icon', alt:"logo icon" %>
+      <%= link_to root_path do %>
+        <%= image_tag "theme/logo-icon.png", class:'logo-icon', alt:"logo icon" %>
+      <% end %>
     </div>
     <div>
-      <h4 class="logo-text">RM Auto</h4>
+      <%= link_to root_path do %>
+        <h4 class="logo-text">RM Auto</h4>
+      <% end %>
     </div>
     <div class="toggle-icon ms-auto"><i class='bx bx-first-page'></i>
     </div>
@@ -40,24 +44,6 @@
       </ul>
     </li>
 
-    <li>
-      <a href="javascript:;" class="has-arrow">
-        <div class="parent-icon"><i class='bx bx-wrench' ></i>
-        </div>
-        <div class="menu-title">eCommerce</div>
-      </a>
-      <ul>
-        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Products</a>
-        </li>
-        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Product Details</a>
-        </li>
-        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
-        </li>
-        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Orders</a>
-        </li>
-      </ul>
-    </li>
-
     <li class="menu-label">Configurações</li>
     <%
 =begin%>
@@ -86,6 +72,27 @@
         <li>
         <%= link_to new_group_path do %>
           <i class="bx bx-plus"></i>Cadastrar Grupo
+        <% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-store-alt' ></i>
+        </div>
+        <div class="menu-title">Gerenciar Revendas</div>
+      </a>
+      <ul>
+        <li>
+          <%= link_to dealers_path do %>
+            <i class="bx bx-right-arrow-alt"></i>
+            Listar Revendas
+          <% end %>
+        </li>
+        <li>
+        <%= link_to new_dealer_path do %>
+          <i class="bx bx-plus"></i>Cadastrar Revenda
         <% end %>
         </li>
       </ul>

@@ -1,0 +1,33 @@
+<%= form_with(model: dealer) do |form| %>
+  <% if dealer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dealer.errors.count, "error") %> ao tentar salver revenda:</h2>
+
+      <ul>
+        <% dealer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class:"form-label" %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :status, class:"form-label" %>
+    <%= form.select :status, [['AGUARDANDO', 'waiting'], ['ATIVO', 'enabled'], ['INATIVO', 'disabled']], {}, {class:"form-select"} %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :group %>
+    <%= form.collection_select(:group_id, @groups, :id, :name,   { include_blank: 'Selecione um grupo' }, { class:"form-select" }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-success" %>
+    <%= link_to 'Voltar', dealers_path, class:"btn btn-danger" %>
+  </div>
+<% end %>
