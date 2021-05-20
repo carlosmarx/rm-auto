@@ -1,0 +1,49 @@
+<% if notice %>
+  <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+    <div class="d-flex align-items-center">
+      <div class="font-35 text-success"><i class="bx bxs-check-circle"></i>
+      </div>
+      <div class="ms-3">
+        <h6 class="mb-0 text-success">Sucesso!</h6>
+        <div><%= notice %></div>
+      </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+
+<div class="card">
+  <div class="card-body">
+    <h6 class="card-title">Exibindo Perfil de Usuário</h6>
+    <hr>
+    <div class="block block-rounded block-themed">
+      <div class="block-content">
+        <dl class="dl-horizontal">
+          <dt><strong>Nome:</strong></dt>
+          <dd><%= @user.try(:profile).try(:full_name) %></dd>
+          <dt><strong>Email:</strong></dt>
+          <dd><%= @user.email %></dd>
+          <dt><strong>Genêro:</strong></dt>
+          <dd><%= @user.try(:profile).try(:gender_i18n) %></dd>
+          <dt><strong>Data de nascimento:</strong></dt>
+          <%
+=begin%>
+ <dd><%= if @user ? l(@user.try(:profile).try (:birthdate)) : 'Não informado' %></dd> 
+<%
+=end%>
+          <dt><strong>Tipo:</strong></dt>
+          <dd><%= @user.kind_i18n %></dd>
+          
+        </dl>
+      </div>
+    </div>
+
+    <%= link_to 'Editar', edit_profile_path(@user), class:"btn btn-primary" %>
+    <%= link_to 'Voltar', users_path, class:"btn btn-danger" %>
+  </div>
+</div>
+
+
+
+
+

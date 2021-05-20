@@ -1,0 +1,93 @@
+<%= form_with(url: profile_path, model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :email, class:"form-label" %>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+  
+      <%= form.fields_for :profile, user.profile do |profile_form| %>
+          
+          <div class="mb-3">
+            <%= profile_form.label :first_name, class:"  form-label" %>
+            <%= profile_form.text_field :first_name, class:"form-control", placeholder: "Nome"%>
+          </div>
+
+          <div class="mb-3">
+            <%= profile_form.label :last_name, class:"form-label" %>
+            <%= profile_form.text_field :last_name, class:"form-control", placeholder: "Sobrenome"%>
+          </div>
+
+          <div class="mb-3">
+            <%= profile_form.label :gender, class:"col-md-3 col-form-label" %>
+            <div class="col-md-9">
+              <div class="form-group has-default bmd-form-group">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= profile_form.radio_button :gender, 'male', class:"form-check-input" %> Masculino
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= profile_form.radio_button :gender, 'female', class:"form-check-input" %> Feminino
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <%= profile_form.radio_button :gender, 'other', class:"form-check-input" %> Outro
+                    <span class="circle">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <%= profile_form.label :birthdate, class:"col-md-3 col-form-label" %>
+            <%= profile_form.date_field :birthdate, class:"form-control", placeholder: "Seu email"%>
+          </div>
+        <% end %>
+
+  <div class="mb-3">
+    <%= form.label :password, class:"form-label" %>
+    <%= form.password_field :password, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :password_confirmation, class:"form-label" %>
+    <%= form.password_field :password_confirmation, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :kind, class:"form-label" %>
+    <%= form.select :kind, enum_options_for_select(model_class, :kind), {}, {class:"form-select"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-success" %>
+    <%= link_to 'Voltar', users_path, class:"btn btn-danger" %>
+  </div>
+
+          
+<% end %>
+

@@ -4,6 +4,9 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      profile:
+        one: Perfil
+        other: Perfis
       group:
         one: Grupo
         other: Grupo
@@ -85,10 +88,16 @@ pt-BR:
         complement: Complemento
         state_id: Estado
         city_id: Cidade
-      user_profile:
+      user:
         <<: *default_attributes
         id: Código
-        address: Endereço
+        email: Email
+        kind: Tipo
+        password: Senha
+        password_confirmation: Confirmação de Senha
+      profile:
+        <<: *default_attributes
+        id: Código
         gender: Sexo
         birthdate: Data de Nascimento
         avatar: Foto de perfil
