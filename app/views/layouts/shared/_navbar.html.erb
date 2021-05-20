@@ -58,6 +58,26 @@
 =end%>
     <li>
       <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-user' ></i>
+        </div>
+        <div class="menu-title">Gerenciar Usuários</div>
+      </a>
+      <ul>
+        <li>
+          <%= link_to users_path do %>
+            <i class="bx bx-right-arrow-alt"></i>
+            Listar Usuários
+          <% end %>
+        </li>
+        <li>
+        <%= link_to new_user_path do %>
+          <i class="bx bx-plus"></i>Cadastrar Usuário
+        <% end %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="javascript:;" class="has-arrow">
         <div class="parent-icon"><i class='bx bx-buildings' ></i>
         </div>
         <div class="menu-title">Gerenciar Grupos</div>

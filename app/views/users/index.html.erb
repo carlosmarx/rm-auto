@@ -1,0 +1,61 @@
+<% if notice %>
+  <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+    <div class="d-flex align-items-center">
+      <div class="font-35 text-success"><i class="bx bxs-check-circle"></i>
+      </div>
+      <div class="ms-3">
+        <h6 class="mb-0 text-success">Sucesso!</h6>
+        <div><%= notice %></div>
+      </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+
+<div class="card radius-10">
+  <div class="card-header border-bottom-0 bg-transparent">
+    <div class="d-flex align-items-center">
+      <div>
+        <h5 class="font-weight-bold mb-0">Listagem de Usuários</h5>
+      </div>
+      <div class="ms-auto">
+      <%= link_to "Cadastrar Novo", new_user_path, class:"btn btn-primary radius-10" %>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table mb-0 align-middle">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.try(:profile).try(:full_name) %></td>
+              <td><%= user.email %></td>
+              <td><%= user.kind_i18n %></td>
+              <td>
+                <%= link_to 'Exibir', user, class:"btn btn-success" %>
+                <%= link_to 'Editar', edit_profile_path(user), class:"btn btn-primary" %>
+                <%= link_to 'Apagar', user, class:"btn btn-danger", method: :delete, data: { confirm: 'Tem certeza que quer apagar esse grupo?' } %>
+              </td>
+            </tr>
+          <% end %>
+          
+        </tbody>
+      </table>
+     
+    </div>
+  </div>
+</div>
+
+
+

@@ -4,7 +4,7 @@ class DealersController < AdminController
 
   # GET /dealers or /dealers.json
   def index
-    @dealers = Dealer.all
+    @dealers = Dealer.includes(:group).all
   end
 
   # GET /dealers/1 or /dealers/1.json

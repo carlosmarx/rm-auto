@@ -1,0 +1,10 @@
+  <%- model_class = User -%>
+  <div class="card">
+    <div class="card-body">
+      <h6 class="card-title">Editando Usuário</h6>
+      <hr>
+      <div class="col-12 col-lg-4">
+        <%= render  partial: 'form', locals: { model_class: model_class, user: @user }  %>
+      </div>
+    </div>
+  </div>

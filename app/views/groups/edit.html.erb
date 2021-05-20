@@ -1,9 +1,10 @@
+<%- model_class = Group -%>
 <div class="card">
   <div class="card-body">
     <h6 class="card-title">Editando Grupo</h6>
     <hr>
     <div class="col-12 col-lg-4">
-      <%= render 'form', group: @group %>
+      <%= render  partial: 'form', locals: { model_class: model_class, group: @group }  %>
     </div>
   </div>
 </div>

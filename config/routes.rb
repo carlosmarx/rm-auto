@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :profiles
+  resources :users, path: :usuarios, path_names: { new: :cadastrar, edit: :editar } do
+    member do
+      get :log
+    end
+  end
+
   resources :groups, path: 'grupos', path_names: { new: :cadastrar, edit: :editar } do
     member do
       get :log
@@ -11,7 +18,16 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, path: :account, path_names: {
+    sign_in: 'entrar',
+    sign_out: 'sair',
+    password: 'secret',
+    confirmation: 'verificar',
+    unlock: 'desbloquear',
+    registration: 'minha-conta',
+    sign_up: 'cadastre-se',
+    edit: 'editar-perfil'
+  }
   root to: 'pages#dashboard'
 
   get 'blank', to: "pages#blank"

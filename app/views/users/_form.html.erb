@@ -1,0 +1,52 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :email, class:"form-label" %>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+  
+  <div class="mb-3">
+     <%= form.select :group_id, Group.order(name: :asc).collect { |c| [c.name, c.id] }, { prompt: 'Grupo', include_blank: 'Ver todos' }, { class: "form-control my-1 mr-2", id: "group_id_eq" } %>
+     <% dealers = Dealer.where(group_id: form.object.group_id).order(name: :asc).collect { |d| [d.name, d.id] } %>
+    <%= form.select :dealer_id, dealers, { prompt: 'Revenda', include_blank: 'Ver todos' }, { class: "form-control my-1 mr-2", id: "dealer_id_eq" } %>
+   
+  </div>
+  
+  <div class="mb-3">
+    
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label :password, class:"form-label" %>
+    <%= form.password_field :password, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :password_confirmation, class:"form-label" %>
+    <%= form.password_field :password_confirmation, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :kind, class:"form-label" %>
+    <%= form.select :kind, enum_options_for_select(model_class, :kind), {}, {class:"form-select"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-success" %>
+    <%= link_to 'Voltar', users_path, class:"btn btn-danger" %>
+  </div>
+
+          
+<% end %>
+
