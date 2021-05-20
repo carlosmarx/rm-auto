@@ -26,7 +26,7 @@ class ProfilesController < AdminController
     end
 
     def params_user
-      params_user = params.require(:user).permit(:email, :kind, :password, :password_confirmation, 
+      params_user = params.require(:user).permit(:email, :kind, :group, :dealer, :password, :password_confirmation, 
         profile_attributes: [:id, :first_name, :last_name, :gender, :birthdate])
     end
 

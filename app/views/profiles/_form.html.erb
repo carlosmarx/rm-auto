@@ -15,8 +15,21 @@
     <%= form.label :email, class:"form-label" %>
     <%= form.text_field :email, class:"form-control" %>
   </div>
+
+  <div class="mb-3">
+    <%= form.label :group_id, class:"  form-label" %>
+    <%= form.select :group_id, Group.order(name: :asc).collect { |c| [c.name, c.id] }, { prompt: 'Grupo', include_blank: 'Ver todos' }, { class: "form-control", id: "group_id_eq" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :dealer_id, class:"  form-label" %>
+    <% dealers = Dealer.where(group_id: form.object.group_id).order(name: :asc).collect { |d| [d.name, d.id] } %>
+    <%= form.select :dealer_id, dealers, { prompt: 'Revenda', include_blank: 'Ver todos' }, { class: "form-control", id: "dealer_id_eq" } %>
+  <div>
+  <br />
   
       <%= form.fields_for :profile, user.profile do |profile_form| %>
+          
           
           <div class="mb-3">
             <%= profile_form.label :first_name, class:"  form-label" %>

@@ -62,6 +62,10 @@ pt-BR:
         text: Conteúdo
         title: Título
         user: Usuário
+        group_id: Grupo
+        dealer_id: Revenda
+        group: Grupo
+        dealer: Revenda
         created_at: Cadastrado em
         updated_at: Atualizado em
 
@@ -93,6 +97,8 @@ pt-BR:
         id: Código
         email: Email
         kind: Tipo
+        group: Grupo
+        dealer: Revenda
         password: Senha
         password_confirmation: Confirmação de Senha
       profile:
@@ -100,6 +106,8 @@ pt-BR:
         id: Código
         gender: Sexo
         birthdate: Data de Nascimento
+        first_name: Nome
+        last_name: Sobrenome
         avatar: Foto de perfil
       group:
         id: Código
