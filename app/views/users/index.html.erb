@@ -29,9 +29,11 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nome</th>
-            <th>Email</th>
             <th>Tipo</th>
+            <th>Nome</th>
+            <th>Grupo</th>
+            <th>Loja</th>
+            <th>Email</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -39,9 +41,11 @@
           <% @users.each do |user| %>
             <tr>
               <td><%= user.id %></td>
-              <td><%= user.try(:profile).try(:full_name) %></td>
-              <td><%= user.email %></td>
               <td><%= user.kind_i18n %></td>
+              <td><%= user.try(:profile).try(:full_name) %></td>
+              <td><%= user.try(:group).try(:name) %></td>
+              <td><%= user.try(:dealer).try(:name) %></td>
+              <td><%= user.email %></td>
               <td>
                 <%= link_to 'Exibir', user, class:"btn btn-success" %>
                 <%= link_to 'Editar', edit_profile_path(user), class:"btn btn-primary" %>

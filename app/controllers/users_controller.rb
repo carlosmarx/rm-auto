@@ -2,7 +2,7 @@ class UsersController < AdminController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
-    @users = User.includes(:profile).all
+    @users = User.includes(:profile, :group, :dealer).all
   end
 
   def new

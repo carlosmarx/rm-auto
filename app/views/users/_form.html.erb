@@ -17,14 +17,13 @@
   </div>
   
   <div class="mb-3">
-     <%= form.select :group_id, Group.order(name: :asc).collect { |c| [c.name, c.id] }, { prompt: 'Grupo', include_blank: 'Ver todos' }, { class: "form-control my-1 mr-2", id: "group_id_eq" } %>
-     <% dealers = Dealer.where(group_id: form.object.group_id).order(name: :asc).collect { |d| [d.name, d.id] } %>
-    <%= form.select :dealer_id, dealers, { prompt: 'Revenda', include_blank: 'Ver todos' }, { class: "form-control my-1 mr-2", id: "dealer_id_eq" } %>
-   
+    <%= form.label :group_id, class:"form-label" %>
+    <%= form.select :group_id, Group.order(name: :asc).collect { |c| [c.name, c.id] }, { prompt: 'Selecione o Grupo' }, { class: "form-control my-1 mr-2", id: "group_id_eq", onChange: "changeGroup()" } %>
   </div>
   
   <div class="mb-3">
-    
+    <%= form.label :dealer_id, class:"form-label" %>
+    <%= form.select :dealer_id, @dealers ? @dealers : [], { prompt: 'Selecione uma Revenda' }, { class: "form-control my-1 mr-2", id: "dealer_id_eq" } %>
   </div>
   
   <div class="mb-3">
@@ -50,3 +49,21 @@
           
 <% end %>
 
+<% content_for :javascripts do %>
+  <script>
+    $('#dealer_id_eq').prop('disabled', true);
+    $("#group_id_eq").change(function() {
+    $('#dealer_id_eq').prop('disabled', false);
+    let id_group = $("#group_id_eq").val()
+    $.get("/dealers_by_group/" + id_group, function (data) {
+      let x
+      $("#dealer_id_eq").html("")
+      $("#dealer_id_eq").append('<option value ="">Selecione uma Revenda</option >')
+      for (x in data) {
+        let option = '<option value ="' + data[x].id + '">' + data[x].name + '</option >'
+        $("#dealer_id_eq").append(option)
+      }
+    });
+  })
+  </script>
+<% end %>

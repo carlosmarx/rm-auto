@@ -17,7 +17,6 @@
 		<%= csp_meta_tag %>
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 		<title>RM Auto – SGI para loja de autos</title>
 	</head>
 
@@ -76,9 +75,8 @@
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
 		<%= render partial: 'layouts/shared/footer' %>
-		
-		
-		
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' ''%>
+		<%= yield(:javascripts) %>
 	</body>
 
 </html>
