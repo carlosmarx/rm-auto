@@ -117,6 +117,27 @@
         </li>
       </ul>
     </li>
+
+    <li>
+      <a href="javascript:;" class="has-arrow">
+        <div class="parent-icon"><i class='bx bx-group' ></i>
+        </div>
+        <div class="menu-title">Gerenciar Clientes</div>
+      </a>
+      <ul>
+        <li>
+          <%= link_to clients_path do %>
+            <i class="bx bx-right-arrow-alt"></i>
+            Listar Clientes
+          <% end %>
+        </li>
+        <li>
+        <%= link_to new_client_path do %>
+          <i class="bx bx-plus"></i>Cadastrar Cliente
+        <% end %>
+        </li>
+      </ul>
+    </li>
     
   </ul>
   <!--end navigation-->

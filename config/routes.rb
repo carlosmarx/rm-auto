@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clients
   resources :profiles
   resources :users, path: :usuarios, path_names: { new: :cadastrar, edit: :editar } do
     member do
